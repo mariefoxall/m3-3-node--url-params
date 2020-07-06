@@ -1,0 +1,5 @@
+<ol>
+    <% top50.forEach(element => { %>
+        <li><%- `#${element.rank} (${element.streams} streams) ${element.title} - ${element.artist} - ${element.publicationDate}` %></li>
+    <% }); %>
+</ol>
