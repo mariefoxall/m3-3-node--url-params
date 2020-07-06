@@ -4,6 +4,7 @@ const express = require("express");
 const morgan = require("morgan");
 
 const { top50 } = require("./data/top50");
+const topArtist = require("./data/topartist");
 
 const PORT = process.env.PORT || 8000;
 
@@ -22,6 +23,28 @@ app.get("/top50", (req, res) => {
   res.render("pages/top50", {
     title: "Top 50 Songs Streamed on Spotify",
     top50: top50,
+  });
+});
+
+app.get("/top50/song/:number", (req, res) => {
+  res.status(200);
+  const songNumber = Number(req.params.number);
+  res.render("pages/uniquesong", {
+    title: `Song #${songNumber}`,
+    songRank: top50[songNumber - 1].rank,
+    songStreams: top50[songNumber - 1].streams,
+    songTitle: top50[songNumber - 1].title,
+    songArtist: top50[songNumber - 1].artist,
+    songDate: top50[songNumber - 1].publicationDate,
+  });
+});
+
+app.get("/popular-artist", (req, res) => {
+  res.status(200);
+  res.render("pages/popular-artist", {
+    title: "Most Popular Artist",
+    top50: top50,
+    topArtist: topArtist,
   });
 });
 

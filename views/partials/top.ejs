@@ -1,0 +1,17 @@
+<ol>
+    <% top50.forEach(element => { %>
+        <% if (element.artist === topArtist){ %>
+        <li class="song">
+            <div class="numstreams">
+                <p class="ranking"><%- `#${element.rank}`%></p>
+                <p class="streams"><%-`(${element.streams} streams)`%></p> </div>
+            <div class="titleartistdate">
+                <div class="titleartist">
+                <p class="title"><%-`${element.title}`%></p>
+                <p class="artist"><%-`by ${element.artist}`%></p>
+                </div>
+                <div class="pubdate"><%-`publication date: ${element.publicationDate}` %></div>
+            </div>
+            </li>
+    <% }}); %>
+</ol>
