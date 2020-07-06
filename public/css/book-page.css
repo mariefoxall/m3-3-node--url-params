@@ -1,0 +1,57 @@
+.bookpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookcontainer {
+  box-shadow: 2px 2px 10px grey;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  /* height: 500px; */
+  width: 700px;
+}
+
+.bookdetails {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid black;
+  padding: 20px;
+}
+
+.booktitle {
+  font-size: 40px;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  padding: 20px 0;
+}
+
+.bookauthor {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.booktype {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.bookdescription {
+  padding: 20px;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.prevnext {
+  text-decoration: none;
+  border: 1px solid grey;
+  background-color: cornsilk;
+  padding: 5px;
+  color: black;
+}
+
+.prevnext:hover {
+  transform: scale(1.1);
+  background-color: darkgrey;
+}

@@ -1,0 +1,15 @@
+<div class = bookpage>
+    <a class="prevnext" href = <%-`http://localhost:8000/books/${bookID-1}`%>>PREVIOUS</a>
+    <div class="bookcontainer">
+        <div class="bookdetails">
+        <img class="bookImgUrl" src=<%- `${bookImgUrl}`%>/>
+<div class="titleauthortype">
+        <p class="booktitle"><%-`${bookTitle}`%></p>
+        <p class="bookauthor"><%-`${bookAuthor}`%></p>
+        <p class="booktype"><%-`${bookType}`%></p> 
+    </div>
+</div>
+        <p class="bookdescription"><%-`${bookDescription}`%></p> 
+    </div>
+    <a class="prevnext" href = <%-`http://localhost:8000/books/${bookID+1}`%>>NEXT</a>
+    </div>
