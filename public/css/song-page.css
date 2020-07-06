@@ -1,6 +1,7 @@
 .songpage {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .songcontainer {
@@ -28,4 +29,17 @@
   font-size: 160px;
   color: lightgray;
   font-weight: bolder;
+}
+
+.prevnext {
+  text-decoration: none;
+  border: 1px solid grey;
+  background-color: cornsilk;
+  padding: 5px;
+  color: black;
+}
+
+.prevnext:hover {
+  transform: scale(1.1);
+  background-color: darkgrey;
 }

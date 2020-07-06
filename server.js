@@ -33,7 +33,7 @@ app.get("/top50/song/:number", (req, res) => {
     res.status(200);
     res.render("pages/uniquesong", {
       title: `Song #${songNumber}`,
-      songRank: top50[songNumber - 1].rank,
+      songRank: songNumber,
       songStreams: top50[songNumber - 1].streams,
       songTitle: top50[songNumber - 1].title,
       songArtist: top50[songNumber - 1].artist,

@@ -1,0 +1,9 @@
+<div class = songpage>
+    <a class="prevnext" href = <%-`http://localhost:8000/top50/song/${songRank-1}`%>>PREVIOUS</a>
+    <div class="songcontainer">
+        <p class="songtitle"><%-`${songTitle}`%></p>
+        <p class="songartist"><%-`${songArtist}`%></p>
+        <p class="songstreams"><%-`${songStreams}`%></p> 
+    </div>
+    <a class="prevnext" href = <%-`http://localhost:8000/top50/song/${songRank+1}`%>>NEXT</a>
+    </div>
