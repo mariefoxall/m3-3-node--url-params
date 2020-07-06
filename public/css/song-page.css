@@ -1,1 +1,31 @@
-/* song page css */
+.songpage {
+  display: flex;
+  justify-content: center;
+}
+
+.songcontainer {
+  box-shadow: 2px 2px 10px grey;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  height: 500px;
+  width: 500px;
+}
+
+.songtitle {
+  font-size: 40px;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  padding: 20px 0;
+}
+
+.songartist {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.songstreams {
+  font-size: 160px;
+  color: lightgray;
+  font-weight: bolder;
+}
