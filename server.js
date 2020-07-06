@@ -27,16 +27,25 @@ app.get("/top50", (req, res) => {
 });
 
 app.get("/top50/song/:number", (req, res) => {
-  res.status(200);
   const songNumber = Number(req.params.number);
-  res.render("pages/uniquesong", {
-    title: `Song #${songNumber}`,
-    songRank: top50[songNumber - 1].rank,
-    songStreams: top50[songNumber - 1].streams,
-    songTitle: top50[songNumber - 1].title,
-    songArtist: top50[songNumber - 1].artist,
-    songDate: top50[songNumber - 1].publicationDate,
-  });
+
+  if (songNumber > 0 && songNumber < 51) {
+    res.status(200);
+    res.render("pages/uniquesong", {
+      title: `Song #${songNumber}`,
+      songRank: top50[songNumber - 1].rank,
+      songStreams: top50[songNumber - 1].streams,
+      songTitle: top50[songNumber - 1].title,
+      songArtist: top50[songNumber - 1].artist,
+      songDate: top50[songNumber - 1].publicationDate,
+    });
+  } else {
+    res.status(404);
+    res.render("pages/fourOhFour", {
+      title: "I got nothing",
+      path: req.originalUrl,
+    });
+  }
 });
 
 app.get("/popular-artist", (req, res) => {
