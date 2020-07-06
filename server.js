@@ -21,6 +21,7 @@ app.get("/top50", (req, res) => {
   res.status(200);
   res.render("pages/top50", {
     title: "Top 50 Songs Streamed on Spotify",
+    top50: top50,
   });
 });
 

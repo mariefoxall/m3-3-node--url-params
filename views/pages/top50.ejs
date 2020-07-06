@@ -1,3 +1,10 @@
 <%- include ("../partials/header") %>
 
+
+<ol>
+    <% top50.forEach(element => { %>
+        <li><%- `Number ${element.rank}. ${element.title}` %></li>
+    <% }); %>
+</ol>
+
 <%- include ("../partials/footer") %>
