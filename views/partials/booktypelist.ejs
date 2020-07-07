@@ -1,19 +1,14 @@
 <ol>
     
     <% bookTypeArray.forEach(element => { %>
-        <li class="book">
+        <li class="booktypelist">
             <div class="bookcover">
-                <img class="cover" src=<%- `${element.imgUrl}`%>/>
-                <p class="booktype"><%-`${element.type}`%></p>
+                <img class="small-cover" src=<%- `${element.imgUrl}`%>/>
             </div>
-            <div class="titleauthor">
+            <div class="titleauthorlist">
                 <p class="booktitle"><%-`${element.title}`%></p>
                 <p class="author"><%-`by ${element.author}`%></p>
                 </div>
-                
-            <div class="bookdescription">
-                <p class="description"><%-`${element.description}`%></p> 
-            </div>
-            </li>
+                            </li>
     <% }); %>
 </ol>

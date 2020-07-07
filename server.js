@@ -7,7 +7,7 @@ const { top50 } = require("./data/top50");
 const topArtist = require("./data/topartist");
 const { books } = require("./data/books");
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 4000;
 
 const app = express();
 
@@ -27,6 +27,7 @@ app.get("/books", (req, res) => {
 
 app.get("/books/:id", (req, res) => {
   const bookID = Number(req.params.id);
+  console.log(bookID);
   if (bookID > 100 && bookID < 126) {
     res.status(200);
     res.render("pages/uniquebook", {
@@ -38,11 +39,32 @@ app.get("/books/:id", (req, res) => {
       bookAuthor: books[bookID - 101].author,
       bookDescription: books[bookID - 101].description,
     });
+    // } else if (bookID == NaN) {
+    //   const bookType = req.params.id;
+    //   console.log(bookType);
+    //   const bookTypeArray = books.filter((element) => {
+    //     return element.type === bookType;
+    //   });
+    //   if (bookTypeArray !== undefined) {
+    //     console.log(bookTypeArray);
+    //     res.status(200);
+    //     res.render("pages/uniquebooktype", {
+    //       title: `Type: ${bookType}`,
+    //       bookTypeArray: bookTypeArray,
+    //     });
+    //   }
+  } else {
+    res.status(404);
+    res.render("pages/fourOhFour", {
+      title: "I got nothing",
+      path: req.originalUrl,
+    });
   }
 });
 
-app.get("/books/:type", (req, res) => {
+app.get("/books/type/:type", (req, res) => {
   const bookType = req.params.type;
+  console.log(bookType);
   const bookTypeArray = books.filter((element) => {
     return element.type === bookType;
   });
